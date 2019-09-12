@@ -1,0 +1,41 @@
+<div class="d-flex align-space-between currency-calculator">
+  <div>
+  <input type="number" 
+          name="fromAmount" 
+          id="fromAmount"
+          class="number-input"
+          min="1"
+          value="1"
+          [(ngModel)]="fromAmount"
+          (change)="updateConvertedValue()"
+          required>
+  <select name="fromCurrency" 
+          id="fromCurrency"
+          class="currency-select"
+          [(ngModel)]="fromSelected"
+          [disabled]="disableSelect1">
+    <option *ngFor="let item of currenciesCodes" 
+            value="{{ item }}">{{ item }}</option>
+  </select>
+</div>
+<span (click)="switchCurrency()">  ⇄  </span>
+<div>
+  <input type="number" 
+          name="toAmount" 
+          id="toAmount"
+          class="number-input"
+          min="0"
+          value="1"
+          [(ngModel)]="toAmount"
+          disabled>
+  <select name="toCurrency" 
+          id="toCurrency"
+          class="currency-select"
+          [(ngModel)]="toSelected"
+          (change)="updateConvertedValue()"
+          [disabled]="disableSelect2">
+    <option *ngFor="let item of currenciesCodes" 
+            value="{{ item }}">{{ item }}</option>
+  </select>
+</div>
+</div>

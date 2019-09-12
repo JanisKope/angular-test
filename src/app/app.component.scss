@@ -1,0 +1,28 @@
+.currency-calculator {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    line-height: 1em;
+
+    .number-input {
+        width: 100px;
+        margin-right: 6px;
+        height: 30px;
+    }
+    .currency-select {
+        width: 100px;
+        height: 30px;
+    }
+
+    > span {
+        display: block;
+        padding: 1rem;
+        cursor: pointer;
+    }
+}
